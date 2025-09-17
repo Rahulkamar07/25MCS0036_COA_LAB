@@ -25,12 +25,12 @@ void fn_wsc_section_pp1_prl()
 	start_time = omp_get_wtime();
 #pragma omp parallel sections
 	{
-#pragma omp sections
+#pragma omp section
 		{
 			sum = fn_calculator_add(a, b);
 			printf("Addition of %d and %d is: %d by thread id: %d", a, b, sum, omp_get_thread_num());
 		}
-#pragma omp sections
+#pragma omp section
 		{
 			sub = fn_calculator_subtract(a, b);
 			printf("Subtraction of %d and %d is: %d by thread id: %d", a, b, sub, omp_get_thread_num());

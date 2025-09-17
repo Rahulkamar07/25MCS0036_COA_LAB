@@ -7,7 +7,7 @@
 //#include "mnudrvprg_010_parallel_construct.h"
 //#include "mnudrvprg_020_runtime_environment_routines.h"
 //#include "run_time_environment_routines.h"
-//#include "030_ws_for_pp1.h"
+#include "030_ws_for_pp1.h"
 //#include "031_wsc_for_num_square.h"
 #include "040_wsc_section_pp1.h"
 int main()
@@ -82,8 +82,8 @@ int main()
 
     //fn_rter_omp_get_team_num();
 
-    //fn_wsc_for_2constructs();
-    //fn_wsc_for_1construct();
+    fn_wsc_for_2constructs();
+    fn_wsc_for_1construct();
     //fn_num_squa.0re();
     fn_wsc_section_pp1_srl();
     fn_wsc_section_pp1_prl();
