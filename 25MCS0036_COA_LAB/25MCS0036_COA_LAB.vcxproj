@@ -134,6 +134,9 @@
     <ClInclude Include="031_wsc_for_num_square.h" />
     <ClInclude Include="040_calculator_function_pp1.h" />
     <ClInclude Include="040_wsc_section_pp1.h" />
+    <ClInclude Include="050_Scheduling_Dynamic.h" />
+    <ClInclude Include="050_Scheduling_Guided.h" />
+    <ClInclude Include="050_Scheduling_Static.h" />
     <ClInclude Include="helloworld_prl.h" />
     <ClInclude Include="helloworld_srl.h" />
     <ClInclude Include="mnudrvprg_010_parallel_construct.h" />

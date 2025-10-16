@@ -7,9 +7,12 @@
 //#include "mnudrvprg_010_parallel_construct.h"
 //#include "mnudrvprg_020_runtime_environment_routines.h"
 //#include "run_time_environment_routines.h"
-#include "030_ws_for_pp1.h"
+//#include "030_ws_for_pp1.h"
 //#include "031_wsc_for_num_square.h"
-#include "040_wsc_section_pp1.h"
+//#include "040_wsc_section_pp1.h"
+//#include "050_Scheduling_Static.h"
+//#include "050_Scheduling_Dynamic.h"
+#include "050_Scheduling_Guided.h"
 int main()
 {
 	/*fn_helloworld_prl();
@@ -82,10 +85,20 @@ int main()
 
     //fn_rter_omp_get_team_num();
 
-    fn_wsc_for_2constructs();
-    fn_wsc_for_1construct();
-    //fn_num_squa.0re();
-    fn_wsc_section_pp1_srl();
-    fn_wsc_section_pp1_prl();
+    //fn_wsc_for_2constructs();
+    //fn_wsc_for_1construct();
+    ////fn_num_squa.0re();
+    //fn_wsc_section_pp1_srl();
+    //fn_wsc_section_pp1_prl();
+	//fn_default_Scheduling();
+    //fn_static_01();
+    //fn_static_02();
+	//fn_default_Dynamic_Scheduling();
+    //fn_dynamic_01();
+	//fn_dynamic_02();
+	//fn_default_Guided_Scheduling();
+	//fn_guided_uneven();
+    //fn_guided_01();
+	fn_guided_02();
     return 0;
 }
