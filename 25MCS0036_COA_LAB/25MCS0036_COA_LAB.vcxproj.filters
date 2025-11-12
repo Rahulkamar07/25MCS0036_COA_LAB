@@ -65,5 +65,32 @@
     <ClInclude Include="050_Scheduling_Guided.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="060_Data_env_constructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="00_colours.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="00_Cover_Screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="040_wsc_section_pp2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="050_Scheduling_pp1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="061_dec_critical.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="061_dec_reduction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edge_detection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mnudrvprg_edge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

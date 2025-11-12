@@ -1,4 +1,5 @@
 #include "stdio.h"
+#include "omp.h"
 //#include "helloworld_srl.h"
 //#include "helloworld_prl.h"
 //#include "ret_et_helloworld.h"
@@ -10,9 +11,17 @@
 //#include "030_ws_for_pp1.h"
 //#include "031_wsc_for_num_square.h"
 //#include "040_wsc_section_pp1.h"
+//#include "040_wsc_section_pp2.h"
 //#include "050_Scheduling_Static.h"
 //#include "050_Scheduling_Dynamic.h"
-#include "050_Scheduling_Guided.h"
+//#include "050_Scheduling_Guided.h"
+//#include "050_Scheduling_pp1.h"
+//#include "060_Data_env_constructs.h"
+//#include "061_dec_critical.h"
+//#include "061_dec_reduction.h"
+#include "mnudrvprg_edge.h"
+//#include "00_Cover_Screen.h"
+
 int main()
 {
 	/*fn_helloworld_prl();
@@ -90,15 +99,64 @@ int main()
     ////fn_num_squa.0re();
     //fn_wsc_section_pp1_srl();
     //fn_wsc_section_pp1_prl();
-	//fn_default_Scheduling();
-    //fn_static_01();
-    //fn_static_02();
-	//fn_default_Dynamic_Scheduling();
-    //fn_dynamic_01();
-	//fn_dynamic_02();
-	//fn_default_Guided_Scheduling();
-	//fn_guided_uneven();
-    //fn_guided_01();
-	fn_guided_02();
+    /*int choice;
+    do 
+    {
+        printf("\n==============================\n");
+        printf("Menu: Number Square using Work-Sharing Construct (OMP)\n");
+        printf("==============================\n");
+        printf("1. Serial Execution\n");
+        printf("2. Parallel Execution\n");
+        printf("3. Compare Execution Time, Speedup, and Efficiency\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf_s("%d", &choice);
+
+        switch (choice) {
+        case 1:
+            fn_num_square_srl();
+            break;
+        case 2:
+            fn_num_square_prl();
+            break;
+        case 3:
+            fn_num_square_speedup_efficiency();
+            break;
+        case 4:
+            printf("Exiting program...\n");
+            break;
+        default:
+            printf("Invalid choice. Please enter 1–4.\n");
+        }
+    } while (choice != 4);*/
+
+	/*fn_default_Static_Scheduling();
+    fn_static_01();
+    fn_static_02();
+	fn_default_Dynamic_Scheduling();
+    fn_dynamic_01();
+	fn_dynamic_02();
+	fn_default_Guided_Scheduling();
+	fn_guided_uneven();
+    fn_guided_01();
+	fn_guided_02();*/
+    
+    // Assuming the prototype of fn_work_1 is something like:
+    // void fn_work_1(float *a, float *b, float *c, float *d);
+    //fn_run_vector_addition();
+    // Fix: Declare float variables, assign values, and pass their addresses.
+    //float a = 2.0f, b = 3.0f, c = 4.0f, d = 6.0f;
+    //fn_work(&a, &b, &c, 2);
+    //fn_run_vector_addition();
+    //fn_main_page();
+    //playGame();
+    /*printf("=== Bakery Order Simulation Using OpenMP Scheduling ===\n");
+    process_static();
+    process_dynamic();
+    process_guided();
+    printf("\n=== Simulation Completed ===\n");*/
+    //fn_dec_critical();
+    //fn_dec_reduction();
+    fn_mnudrvprg_edge();
     return 0;
 }

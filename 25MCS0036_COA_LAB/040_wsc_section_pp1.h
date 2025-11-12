@@ -9,11 +9,11 @@ void fn_wsc_section_pp1_srl()
 	double start_time, end_time;
 	start_time = omp_get_wtime();
 	int sum = fn_calculator_add(a,b);
-	printf("Addition of %d and %d is: %d by thread id: %d", a,b, sum,omp_get_thread_num());
+	printf("Addition of %d and %d is: %d by thread id: %d\n", a,b, sum,omp_get_thread_num());
 	int sub = fn_calculator_subtract(a,b);
-	printf("Subtraction of %d and %d is: %d by thread id: %d", a, b, sub,omp_get_thread_num());
+	printf("Subtraction of %d and %d is: %d by thread id: %d\n", a, b, sub,omp_get_thread_num());
 	end_time = omp_get_wtime();
-	printf("\nTime taken for serial execution: %f seconds\n", end_time - start_time);
+	printf("Time taken for serial execution: %f seconds\n", end_time - start_time);
 }
 
 void fn_wsc_section_pp1_prl()
@@ -28,14 +28,14 @@ void fn_wsc_section_pp1_prl()
 #pragma omp section
 		{
 			sum = fn_calculator_add(a, b);
-			printf("Addition of %d and %d is: %d by thread id: %d", a, b, sum, omp_get_thread_num());
+			printf("\nAddition of %d and %d is: %d by thread id: %d \n", a, b, sum, omp_get_thread_num());
 		}
 #pragma omp section
 		{
 			sub = fn_calculator_subtract(a, b);
-			printf("Subtraction of %d and %d is: %d by thread id: %d", a, b, sub, omp_get_thread_num());
+			printf("Subtraction of %d and %d is: %d by thread id: %d \n", a, b, sub, omp_get_thread_num());
 		}
 	}
 	end_time = omp_get_wtime();
-	printf("\nTime taken for parallel execution: %f seconds\n", end_time - start_time);
+	printf("Time taken for parallel execution: %f seconds\n", end_time - start_time);
 }

@@ -130,17 +130,26 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="00_colours.h" />
+    <ClInclude Include="00_Cover_Screen.h" />
     <ClInclude Include="030_ws_for_pp1.h" />
     <ClInclude Include="031_wsc_for_num_square.h" />
     <ClInclude Include="040_calculator_function_pp1.h" />
     <ClInclude Include="040_wsc_section_pp1.h" />
+    <ClInclude Include="040_wsc_section_pp2.h" />
     <ClInclude Include="050_Scheduling_Dynamic.h" />
     <ClInclude Include="050_Scheduling_Guided.h" />
+    <ClInclude Include="050_Scheduling_pp1.h" />
     <ClInclude Include="050_Scheduling_Static.h" />
+    <ClInclude Include="060_Data_env_constructs.h" />
+    <ClInclude Include="061_dec_critical.h" />
+    <ClInclude Include="061_dec_reduction.h" />
+    <ClInclude Include="edge_detection.h" />
     <ClInclude Include="helloworld_prl.h" />
     <ClInclude Include="helloworld_srl.h" />
     <ClInclude Include="mnudrvprg_010_parallel_construct.h" />
     <ClInclude Include="mnudrvprg_020_runtime_environment_routines.h" />
+    <ClInclude Include="mnudrvprg_edge.h" />
     <ClInclude Include="ret_et_helloworld.h" />
     <ClInclude Include="ret_practice.h" />
     <ClInclude Include="ret_tid_helloworld.h" />
