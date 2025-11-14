@@ -85,6 +85,5 @@ void fn_num_square_speedup_efficiency() {
     int no_of_cores = omp_get_max_threads();
     efficiency = ((speedup / no_of_cores) * 100);
     printf("Efficiency = %f \n", efficiency);
-
 }
 

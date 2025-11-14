@@ -1,63 +1,64 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <omp.h>
 
-#define DECK_SIZE 52
-#define HALF_DECK 26
+#define N 52
 
-void playGame() {
-    int deck[DECK_SIZE];
-    int player1[HALF_DECK], player2[HALF_DECK];
-
-    // Initialize deck
-    for (int i = 0; i < DECK_SIZE; i++)
-        deck[i] = i + 1;
-
+void serialGame() {
+    int deck[N], p1[N / 2], p2[N / 2];
     srand(time(NULL));
+
+    for (int i = 0; i < N; i++) deck[i] = i + 1;
+
+    for (int i = 0; i < N; i++) {
+        int j = rand() % N;
+        int t = deck[i];
+        deck[i] = deck[j];
+        deck[j] = t;
+    }
+
+    for (int i = 0; i < N / 2; i++) {
+        p1[i] = deck[i];
+        p2[i] = deck[i + N / 2];
+    }
+
+    printf("\n=== Serial Card Game ===\n");
+    printf("Player 1: "); for (int i = 0; i < N / 2; i++) printf("%d ", p1[i]);
+    printf("\nPlayer 2: "); for (int i = 0; i < N / 2; i++) printf("%d ", p2[i]);
+    printf("\n=== Serial Game Complete ===\n");
+}
+
+void parallelGame() {
+    int deck[N], p1[N / 2], p2[N / 2];
+    srand(time(NULL));
+
+    for (int i = 0; i < N; i++) deck[i] = i + 1;
 
 #pragma omp parallel
     {
-        // Single: only one thread prints the message
 #pragma omp single
-        printf("\n=== Starting the Card Game Simulation ===\n");
+        printf("\n=== Parallel Card Game ===\n");
 
-        // Parallel for: shuffle deck
 #pragma omp for
-        for (int i = 0; i < DECK_SIZE; i++) {
-            int j = rand() % DECK_SIZE;
-            int temp = deck[i];
+        for (int i = 0; i < N; i++) {
+            int j = rand() % N;
+            int t = deck[i];
             deck[i] = deck[j];
-            deck[j] = temp;
+            deck[j] = t;
         }
 
-        // Sections: deal cards concurrently
 #pragma omp sections
         {
 #pragma omp section
-            {
-                for (int i = 0; i < HALF_DECK; i++)
-                    player1[i] = deck[i];
-                printf("Player 1 dealt (Thread %d)\n", omp_get_thread_num());
-            }
+            for (int i = 0; i < N / 2; i++) p1[i] = deck[i];
 
 #pragma omp section
-            {
-                for (int i = 0; i < HALF_DECK; i++)
-                    player2[i] = deck[i + HALF_DECK];
-                printf("Player 2 dealt (Thread %d)\n", omp_get_thread_num());
-            }
+            for (int i = 0; i < N / 2; i++) p2[i] = deck[i + N / 2];
         }
     }
 
-    // Print player cards
-    printf("\nPlayer 1's Cards: ");
-    for (int i = 0; i < HALF_DECK; i++)
-        printf("%d ", player1[i]);
-
-    printf("\nPlayer 2's Cards: ");
-    for (int i = 0; i < HALF_DECK; i++)
-        printf("%d ", player2[i]);
-
-    printf("\n=== Game Setup Complete ===\n");
+    printf("Player 1: "); for (int i = 0; i < N / 2; i++) printf("%d ", p1[i]);
+    printf("\nPlayer 2: "); for (int i = 0; i < N / 2; i++) printf("%d ", p2[i]);
+    printf("\n=== Parallel Game Complete ===\n");
 }
